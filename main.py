@@ -15,7 +15,7 @@ def get_all_users(db: Session = Depends(get_db)):
 
 @app.get("/users/{user_id}")
 def get_user_by_email(user_id: int, db: Session = Depends(get_db)):
-        user = db.query(User).filter(User.id == user_id).first()
+    users = db.query(User).filter(User.id == user_id).first()
     if user:
         return user
     raise HTTPException(status_code=404, detail="User not found")
