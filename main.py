@@ -14,7 +14,7 @@ def get_all_users(db: Session = Depends(get_db)):
     return db.query(User).all()
 
 @app.get("/users/{user_id}")
-def get_user_by_email(user_id: int, db: Session = Depends(get_db)):
+def get_user_by_user_id(user_id: int, db: Session = Depends(get_db)):
     users = db.query(User).filter(User.id == user_id).first()
     if user:
         return user
