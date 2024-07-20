@@ -9,3 +9,8 @@ class UserCreate(BaseModel):
 class UserUpdate(BaseModel):
     name: str
     email: str
+class DepartmentCreate(BaseModel):
+    name: str
+
+class DepartmentUpdate(BaseModel):
+    name: str
