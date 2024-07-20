@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import User
 from app.schema import UserCreate, UserUpdate
+from app.models import Department  # Add Department model
+from app.schema import DepartmentCreate, DepartmentUpdate  # Add schemas
 
 
 
@@ -47,3 +49,12 @@ def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
     db.delete(db_user)
     db.commit()
     return {"message": "User deleted successfully"}
+
+@app.post("/departments/", response_model=Department)
+def create_department(department: DepartmentCreate, db: Session = Depends(get_db)):
+    """Create a new department."""
+    db_department = Department(**department.dict())
+    db.add(db_department)
+    db.commit()
+    db.refresh(db_department)
+    return db_department
