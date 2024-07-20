@@ -9,4 +9,10 @@ class User(Base):
     email: str = Column(String(50), unique=True, index=True)
     password: str = Column(String(50))
 
+class Department(Base):
+    __tablename__ = "departments"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, unique=True, index=True)
+    
 Base.metadata.create_all(engine)
+
