@@ -3,8 +3,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import User
 from app.schema import UserCreate, UserUpdate
-
-
+from app.email import send_email  # P4eb2
 
 app = FastAPI()
 
@@ -27,6 +26,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
+    send_email(db_user.email, "Welcome!", "Welcome to our platform!")  # P6ca3
     return db_user
 
 @app.put("/users/{user_id}")
