@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "build": "pip install -r requirements.txt --force-reinstall",
+    "build": "pip install -r requirements.txt",
     "launch": "fastapi dev main.py"
   }
 }

@@ -37,7 +37,7 @@ def get_user_by_user_id(user_id: int, db: Session = Depends(get_db)):
         User: The user with the specified ID.
     """
     service = UserService(db)
-    return service.get_user_by_user_id(user_id, db)
+    return service.get_user_by_user_id(user_id)
 
 @router.post("/users/")
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
@@ -54,7 +54,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
         User: The created user.
     """
     service = UserService(db)
-    return service.create_user(user, db)
+    return service.create_user(user)
 
 @router.put("/users/{user_id}")
 def update_user_by_email(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
@@ -72,7 +72,7 @@ def update_user_by_email(user_id: int, user: UserUpdate, db: Session = Depends(g
         dict: A message indicating the update status.
     """
     service = UserService(db)
-    return service.update_user_by_email(user_id, user, db)
+    return service.update_user_by_email(user_id, user)
 
 @router.delete("/users/{user_id}")
 def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
@@ -89,4 +89,4 @@ def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
         dict: A message indicating the deletion status.
     """
     service = UserService(db)
-    return service.delete_user_by_email(user_id, db)
+    return service.delete_user_by_email(user_id)
