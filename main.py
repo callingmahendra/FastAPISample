@@ -4,5 +4,5 @@ from app.routes.customers import router as customers_router
 
 app = FastAPI()
 
-app.include_router(users_router, prefix="/users", tags=["users"])
-app.include_router(customers_router, prefix="/customers", tags=["customers"])
+app.include_router(users_router, tags=["users"])
+app.include_router(customers_router, tags=["customers"])
