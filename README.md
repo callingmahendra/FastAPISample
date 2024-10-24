@@ -76,6 +76,20 @@ docker-compose up
 
 4. You can also access the automatically generated API documentation at `http://127.0.0.1:8000/docs` (Swagger UI) and `http://127.0.0.1:8000/redoc` (ReDoc).
 
+## Running Tests with Pytest
+
+1. Install pytest if you haven't already:
+
+```bash
+pip install pytest
+```
+
+2. Run the tests:
+
+```bash
+pytest
+```
+
 ## License
 
 This project is licensed under the terms of the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
