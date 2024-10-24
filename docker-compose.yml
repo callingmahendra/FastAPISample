@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///users.db
+    networks:
+      - fastapi_network
+
+  db:
+    image: sqlite
+    container_name: sqlite_db
+    volumes:
+      - ./users.db:/data/users.db
+    networks:
+      - fastapi_network
+
+networks:
+  fastapi_network:
+    driver: bridge
