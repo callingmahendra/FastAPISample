@@ -2,3 +2,5 @@ fastapi==0.115.3
 sqlalchemy
 fastapi[standard]
 zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
+pydantic==2.*
+uvicorn
