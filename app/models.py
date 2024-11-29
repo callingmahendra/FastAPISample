@@ -38,4 +38,20 @@ class Customer(Base):
     phone: str = Column(String(15))
     address: str = Column(String(100))
 
+class Employee(Base):
+    """
+    Represents an employee in the system.
+
+    Attributes:
+        id (int): The unique identifier for the employee.
+        name (str): The name of the employee.
+        department (str): The department of the employee.
+        gender (str): The gender of the employee.
+    """
+    __tablename__ = "employees"
+    id: int = Column(Integer, primary_key=True, index=True)
+    name: str = Column(String(50), index=True)
+    department: str = Column(String(50))
+    gender: str = Column(String(10))
+
 Base.metadata.create_all(engine)
