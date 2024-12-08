@@ -54,3 +54,29 @@ class CustomerUpdate(BaseModel):
     email: str
     phone: str
     address: str
+
+class EmployeeCreate(BaseModel):
+    """
+    Schema for creating a new employee.
+
+    Attributes:
+        name (str): The name of the employee.
+        department (str): The department of the employee.
+        gender (str): The gender of the employee.
+    """
+    name: str
+    department: str
+    gender: str
+
+class EmployeeUpdate(BaseModel):
+    """
+    Schema for updating an existing employee.
+
+    Attributes:
+        name (str): The name of the employee.
+        department (str): The department of the employee.
+        gender (str): The gender of the employee.
+    """
+    name: str
+    department: str
+    gender: str
