@@ -10,14 +10,19 @@ This project is a sample FastAPI application that demonstrates how to create and
   - `routes/`: API route definitions
     - `customers.py`: API routes for managing customers
     - `users.py`: API routes for managing users
+    - `employees.py`: API routes for managing employees
   - `schema.py`: Pydantic schemas for request and response validation
   - `services/`: Service layer for business logic
     - `customers.py`: Customer service logic
     - `users.py`: User service logic
+    - `employees.py`: Employee service logic
 - `main.py`: Entry point for the FastAPI application
 - `requirements.txt`: List of dependencies for the project
 - `Dockerfile`: Docker configuration for the application
 - `docker-compose.yml`: Docker Compose configuration for the application
+- `.devcontainer.json`: Devcontainer configuration for the application
+- `.devcontainer/devcontainer.json`: Devcontainer configuration for the application
+- `.gitignore`: Git ignore file
 
 ## Prerequisites
 
